@@ -29,6 +29,8 @@
     "styleguide:build": "styleguidist build",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint  --fix src/**/*.js",
     "format": "prettier . --write --config ./.prettierrc"
@@ -57,6 +59,7 @@
     "eslint-plugin-prettier": "^5.1.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.1.1",
     "prettier": "^3.1.1"
   }
 }

@@ -3,20 +3,18 @@ import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
-import { parseMeetings } from 'utils/parsers'
-
-import { useMeetings } from 'hooks/meetings'
+import { useNostrMeetings } from 'hooks/nostrMeetings'
 const localizer = momentLocalizer(moment)
 
 const MeetingsCalendar = () => {
-  const meetings = useMeetings()
+  const meetings = useNostrMeetings()
 
   return (
     <div>
       <Calendar
         defaultView='agenda'
         localizer={localizer}
-        events={parseMeetings(meetings)}
+        events={meetings}
         startAccessor='start'
         endAccessor='end'
         style={{ height: 500 }}

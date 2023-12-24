@@ -4,15 +4,16 @@ import './custom.scss'
 import App from './App/App'
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
-import store from './App/store'
-import { Provider } from 'react-redux'
+
+import { NDKProvider } from '@nostr-dev-kit/ndk-react'
+import relays from 'constants/relays'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <BrowserRouter>
-    <Provider store={store}>
+    <NDKProvider relayUrls={relays}>
       <App />
-    </Provider>
+    </NDKProvider>
   </BrowserRouter>
 )
 

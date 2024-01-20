@@ -9,10 +9,15 @@ export const useLoginNIP07 = () => {
 
   async function connectExtension() {
     setLoading(true)
-    const user = await loginWithNip07()
-    if (user) {
-      setResult(user)
+    try {
+      const user = await loginWithNip07()
+      if (user) {
+        setResult(user)
+      }
+    } catch (e) {
+      console.log('e', e)
     }
+
     setLoading(false)
   }
 

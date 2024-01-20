@@ -1,6 +1,14 @@
+# Roadmap
+
+- publish a meet
+- config relay
+- filter calendar by public key
+- zap to publish
+- zap to attend
+
 # Arquitecture
 
-App -> Pages -> Componentes -> Store -> Services
+App -> Pages -> Componentes -> hooks -> Services -> Store
 
 # Getting Started with Create React App
 

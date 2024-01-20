@@ -1,13 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from 'components/Counter/counterSlice.js'
-import rocketReducer from 'components/Rockets/rocketSlice.js'
-import meetingsReducer from 'components/MeetingList/meetingsSlice.js'
-import profileReducer from 'components/Profile/profileSlice'
+import panelSliceReducer from 'components/Panel/panelSlice'
+import meetingsReducer from 'components/MeetingsCalendar/meetingsSlice'
+import publishReducer from 'components/Publish/publishSlice'
+
 export default configureStore({
   reducer: {
-    counter: counterReducer,
-    rockets: rocketReducer,
+    panel: panelSliceReducer,
     meetings: meetingsReducer,
-    profile: profileReducer
+    publish: publishReducer
   }
 })

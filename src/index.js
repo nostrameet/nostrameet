@@ -6,14 +6,17 @@ import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
 
 import { NDKProvider } from '@nostr-dev-kit/ndk-react'
-import relays from 'constants/relays'
-
+import RELAYS from 'constants/relays'
+import { Provider } from 'react-redux'
+import store from './App/store'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <BrowserRouter>
-    <NDKProvider relayUrls={relays}>
-      <App />
-    </NDKProvider>
+    <Provider store={store}>
+      <NDKProvider relayUrls={RELAYS}>
+        <App />
+      </NDKProvider>
+    </Provider>
   </BrowserRouter>
 )
 

@@ -5,7 +5,7 @@ import RELAYS from 'constants/relays'
 export const useNostrMeetings = () => {
   const { events } = useSubscribe({
     relays: RELAYS,
-    filters: [{ kinds: [1] }],
+    filters: [{ kinds: [31922] }],
     options: {
       closeAfterEose: false
     }

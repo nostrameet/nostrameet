@@ -3,6 +3,8 @@ import { usePublish } from 'nostr-hooks'
 import ReactDatePicker from 'react-datepicker'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { v7 as uuidv7 } from 'uuid'
+
 import 'react-datepicker/dist/react-datepicker.css'
 
 import Button from 'react-bootstrap/Button'
@@ -21,8 +23,14 @@ export const Publish = () => {
 
   const handleSubmit = async () => {
     await publish({
-      kind: 1,
-      content: JSON.stringify({ title, start, end })
+      kind: 31922,
+      content: title,
+      tags: [
+        ['d', uuidv7()],
+        ['name', title],
+        ['start', start.toISOString()],
+        ['end', end.toISOString()]
+      ]
     })
     dispatch(setTitle(''))
     dispatch(hidePanel())

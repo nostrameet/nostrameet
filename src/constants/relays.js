@@ -1,4 +1,5 @@
 const RELAYS = [
+  // 'ws://localhost:7000'
   // 'ws://127.0.0.1:4444'
   'wss://relay.damus.io/'
   //   'wss://relay.snort.social'

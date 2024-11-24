@@ -22,8 +22,8 @@ const processTag = (tag, accumulator) => {
   switch (tagType) {
     case 'd':
       return { ...accumulator, id: tagData[0] } // change d to id
-    case 'name':
-      return { ...accumulator, title: tagData[0] } // change name to title
+    case 'title':
+      return { ...accumulator, title: tagData[0] }
     case 'start':
       return { ...accumulator, start: tagData[0] }
     case 'end':

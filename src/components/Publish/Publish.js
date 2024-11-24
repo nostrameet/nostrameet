@@ -27,7 +27,7 @@ export const Publish = () => {
       content: title,
       tags: [
         ['d', uuidv7()],
-        ['name', title],
+        ['title', title],
         ['start', start.toISOString()],
         ['end', end.toISOString()]
       ]
